@@ -17,11 +17,9 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: "Inter", Arial, sans-serif;
-  margin: 0;
-  color: var(--text-dark);
-  background: var(--bg);
-  line-height: 1.7;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
 }
 
 /* Layout */
@@ -84,12 +82,13 @@ section {
   padding: 48px 0;
 }
 section .container {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.85); /* semi-transparent white */
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 32px;
   box-shadow: 0 8px 24px rgba(27, 94, 32, 0.06);
 }
+
 section h2 {
   color: var(--brand-green-dark);
   margin: 0 0 12px;
@@ -138,16 +137,24 @@ section p {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 25px;
 }
 @media (min-width: 768px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: none;       /* no solid box */
+  border: none;           /* remove border */
+  border-radius: 0;       /* no rounded corners around the box */
+  padding: 0;             /* no extra spacing */
+}
+
+/* Gallery image sizing */
+.gallery-img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
   border-radius: 12px;
-  padding: 20px;
 }
 
 /* Callouts */
@@ -201,3 +208,83 @@ footer p { margin: 0; font-size: 0.95rem; }
 .mt-8 { margin-top: 8px; }
 .mt-16 { margin-top: 16px; }
 .mt-24 { margin-top: 24px; }
+
+/* Adjust section spacing */
+section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Header layout */
+.header-container {
+  display: flex;
+  align-items: center;   /* vertically center logo and text */
+  gap: 20px;             /* space between logo and text */
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 80px;          /* adjust logo size */
+  width: auto;           /* keep proportions */
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.header-text p {
+  margin: 4px 0 0;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Footer layout */
+.footer-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+/* Header layout */
+.header-container {
+  display: flex;
+  align-items: center;       /* vertically center logo and text */
+  justify-content: flex-start;
+  padding: 10px 20px;
+}
+
+.logo-img {
+  height: 100px;   /* bigger size */
+  width: auto;
+}
+
+.header-text {
+  flex: 1;                   /* text spreads across remaining width */
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #ffffff;            /* keep name bold and visible */
+}
+
+.header-text .tagline {
+  margin: 6px 0 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #ffd700;            /* gold/yellow for visibility */
+}
+
+.contact-block {
+  text-align: center;   /* centers all text inside */
+  max-width: 600px;     /* optional: keeps it neat */
+  margin: 0 auto;       /* centers the block itself */
+}
